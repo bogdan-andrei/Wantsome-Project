@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Authenticate</title>
+    <link rel="stylesheet" href="./assets/loginStyle.css" />
+  </head>
+  <body>
+    <div class="loginbox">
+      <div class="pic_box">
+        <img src="assets/images/user_avatar1.png" alt="avatar" />
+      </div>
+      <h2>Sign In Below!</h2>
+      <form>
+        <label for="email">Email Adress</label><br />
+        <input type="text" name="email" id="email" placeholder="Email" /><br />
+        <label id="psw" for="password">Password</label><br />
+        <input
+          type="password"
+          name="pass"
+          id="password"
+          placeholder="Password"
+        />
+        <input type="submit" id="submitButton" value="Login" />
+        <div class="signUpLinks">
+          <a class="link" href="">Create account</a>
+          <a class="link" href="">Forgot password</a>
+        </div>
+      </form>
+    </div>
+    <script src="./assets/loginJS.js"></script>
+  </body>
+</html>

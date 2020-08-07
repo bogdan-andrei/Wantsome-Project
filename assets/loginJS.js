@@ -61,28 +61,40 @@ passwordVerification.addEventListener("blur", verifyPassword);
 function clickLogin(event) {
   event.preventDefault();
   if (verifyEmail() && verifyPassword()) {
-    form.action = "index.html";
-    button.formaction = "index.html";
-    form.submit();
+    fetch("http://localhost:3000/api/login", {
+      method: "POST",
+      body: JSON.stringify({
+        email: emailVerification.value,
+        password: passwordVerification.value,
+      }),
+    })
+    .then((r) => r.json())
+      .then((response) => {
+        sessionStorage.setItem("token", response.token);
+        window.location.assign("products.html");
+      });
   } else {
     alert("You shall not pass!");
   }
 }
 button.addEventListener("click", clickLogin);
 
-form.addEventListener("submit", function(e) {
-  e.preventDefault();
 
-  fetch("http://localhost:3000/api/login", {
-    method: "POST",
-    body: JSON.stringify({
-      email: emailVerification.value,
-      password: asswordVerification.value,
-    }),
-  })
-  .then((r) => r.json())
-    .then((response) => {
-      sessionStorage.setItem("token", response.token);
-      window.location.assign("./index.html");
-    });
-})
+
+// form.addEventListener("submit", function(e) {
+//   e.preventDefault();
+
+//   fetch("http://localhost:3000/api/login", {
+//     method: "POST",
+//     body: JSON.stringify({
+//       email: emailVerification.value,
+//       password: passwordVerification.value,
+//     }),
+//   })
+//   .then((r) => r.json())
+//     .then((response) => {
+//       sessionStorage.setItem("token", response.token);
+//       window.location.assign("products.html");
+//     });
+  
+// })

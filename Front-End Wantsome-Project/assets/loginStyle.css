@@ -1,25 +1,41 @@
 body {
     margin: 0;
     padding: 0;
-    background-size: cover;
-    background: url("assets/images/background_login1.jpg");
-    background-repeat: no-repeat;
-    background-size: 100%;
     font-family: sans-serif;
   }
-  
-  .loginbox {
-    width: 320px;
-    height: 420px;
+  #container{
+    display: flex;
+  }
+
+  #leftHero{
+    width: 65%;
+    height: 100vh;
+    background: url("./images/loginHeroBackground.jpg") no-repeat center center  ;
+    background-size: cover;
+  }
+  #rightHero{
+    background: url("./images/loginBackground.jpg") no-repeat center center  ;
+    width: 35%;
+    height: 100vh;
+    position: relative;
+    background-size: cover;
+    background-color: lightgray;
+  }
+
+  #loginbox {
+    position: absolute;
+    /* width: 320px; */
+    width: 65%;
+    /* height: 80%; */
     background-color: rgba(0, 0, 0, 0.9);
     color: #fff;
-    left: 85%;
+    left: 50%;
     top: 50%;
-    position: absolute;
     transform: translate(-50%, -50%);
     box-sizing: border-box;
     padding: 70px 30px;
     border-radius: 10px;
+   
   }
   
   .pic_box {
@@ -31,7 +47,7 @@ body {
     left: 50%;
     transform: translate(-50%, -0%);
     padding: 25px;
-    background: red;
+    background: rgba(136, 23, 14, 0.92);
     overflow: hidden;
     box-sizing: border-box;
   }
@@ -68,7 +84,7 @@ body {
   #email,
   #password {
     border: 0;
-    border-bottom: 1px solid red;
+    border-bottom: 1px solid rgba(136, 23, 14, 0.678);
     background: transparent;
     outline: none;
     height: 40px;
@@ -78,7 +94,7 @@ body {
   #submitButton {
     border: 0;
     outline: 0;
-    background: red;
+    background: rgba(136, 23, 14, 0.678);
     height: 40px;
     border-radius: 20px;
     font-size: 18px;
@@ -89,12 +105,26 @@ body {
     justify-content: space-around;
   }
   .link:hover {
-    color: red;
+    /* color: rgba(0, 128, 0, 0.692); */
   }
   .link {
     text-decoration: none;
     font-size: 15px;
     line-height: 15px;
-    color: skyblue;
+    color: white;
   }
+  
+  @media only screen and (max-width: 700px) {
+/* #container{
+  display: flex;
+  flex-direction: column-reverse;
+} */
+#leftHero {
+  display: none;
+}
+#rightHero{
+  width:100%;
+}
+}
+
   

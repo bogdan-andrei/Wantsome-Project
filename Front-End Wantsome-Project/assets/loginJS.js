@@ -6,7 +6,7 @@ var form = document.getElementsByTagName("form")[0];
 function verifyEmail(event) {
   var content = /^[\w._-]+[+]?[\w._-]+@[\w.-]+\.[a-zA-Z]{2,6}$/;
   if (content.test(emailVerification.value)) {
-    warning.innerText = "Email adress validated!";
+    warning.innerText = "Email valid!";
     warning.setAttribute(
       "style",
       "color: green; font-size: 14px; margin-top: 1px"
@@ -15,7 +15,7 @@ function verifyEmail(event) {
     form.insertBefore(warning, labelPass);
     return true;
   } else {
-    warning.innerText = "Please check email!";
+    warning.innerText = "Verificati email-ul!";
     warning.setAttribute(
       "style",
       "color: red; font-size: 14px; margin-top: 1px"
@@ -32,12 +32,10 @@ var passwordWarning = document.createElement("p");
 var button = document.getElementById("submitButton");
 
 function verifyPassword(event) {
-  var specials = /[!@#$%^&*]/;
-  if (
-    passwordVerification.value.length >= 6 &&
-    passwordVerification.value.match(specials)
-  ) {
-    passwordWarning.innerText = "Password validated!";
+  //validate password (min 1 litera mare, 1 mica, 1 cifra, 1 non-alfa numeric number, between 8-16 with no space)
+  var specials =/^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,16}$/;
+  if (passwordVerification.value.match(specials)) {
+    passwordWarning.innerText = "Parola validata!";
     passwordWarning.setAttribute(
       "style",
       "color: green; font-size: 14px; margin-top: 1px"
@@ -47,7 +45,7 @@ function verifyPassword(event) {
     return true;
   } else {
     passwordWarning.innerText =
-      "Password must contain at least 6 chars and 1 special character";
+      "Parola trebuie sa contina intre 8-16 caractere, cel putin 1 litera mare, 1 litera mica, 1 cifra si 1 caracter non-alfa numeric";
     passwordWarning.setAttribute(
       "style",
       "color: red; font-size: 14px; margin-top: 1px"

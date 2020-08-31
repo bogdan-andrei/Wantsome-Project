@@ -1,0 +1,12 @@
+@import "header&footer";
+@import "responsiveHeader&Footer";
+
+main{
+    display: flex;
+}
+.productsCart{
+    width: 75%
+}
+.orderBox{
+    width: 25%
+}

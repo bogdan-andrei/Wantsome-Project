@@ -7,27 +7,33 @@
     <link rel="stylesheet" href="./assets/loginStyle.css" />
   </head>
   <body>
-    <div class="loginbox">
+    <div id="container">
+    <div id="leftHero"></div>
+    <div id="rightHero">
+    <div id="loginbox">
       <div class="pic_box">
-        <img src="assets/images/user_avatar1.png" alt="avatar" />
+        <img src="assets/images/user_avatar3.png" alt="avatar" />
       </div>
-      <h2>Sign In Below!</h2>
+      <h2>Contul meu</h2>
       <form>
-        <label for="email">Email Adress</label><br />
+        <label for="email">Email</label><br />
         <input type="text" id="email" placeholder="Email" /><br />
-        <label id="psw" for="password">Password</label><br />
+        <label id="psw" for="password">Parola</label><br />
         <input
           type="password"
           id="password"
-          placeholder="Password"
+          placeholder="Parola"
         />
-        <input type="submit" id="submitButton" value="Login" />
+        <input type="submit" id="submitButton" value="Intra in cont" />
         <div class="signUpLinks">
-          <a class="link" href="">Create account</a>
-          <a class="link" href="">Forgot password</a>
+          <a class="link" href="signup.html">Creare cont nou</a>
+          <a class="link" href="">Recuperare parola</a>
+          
         </div>
       </form>
     </div>
+  </div>
+</div>
     <script src="./assets/loginJS.js"></script>
   </body>
 </html>

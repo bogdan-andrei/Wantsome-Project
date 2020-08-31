@@ -1,0 +1,13 @@
+@import "header&footer";
+@import "responsiveHeader&Footer";
+
+
+.container{
+    width: 75%;
+    margin: 0 10%;
+}
+#form {
+    width: 60%;
+    display:flex;
+    flex-direction: column;
+}

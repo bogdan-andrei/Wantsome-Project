@@ -1,0 +1,64 @@
+
+
+  body {
+   background: url(images/main-background.jpg) no-repeat center center fixed; 
+   background-size: cover;
+  }
+
+  .content {
+    width: 50%;
+    height: 40%;
+    text-align: center;
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 32px;
+    font-family: 'Times New Roman', Times, serif;
+  }
+  h1,h3 {
+    animation-name: headingTransition;
+    animation-duration: 2s;
+    animation-delay: 2s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: both;
+  }
+  #mainBtn, #loginBtn {
+    background-color: transparent;
+    width: 30%;
+    height: 20%;
+    border: inset 2px white;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 80%;
+    margin-left: 5%;
+    animation-name: buttonTransition;
+    animation-duration: 2s;
+    animation-delay: 4s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: both;
+    margin-top: 4%;
+  }
+  @keyframes headingTransition {
+    from {
+      opacity: 0;
+      font-size: 12px;
+    }
+    to {
+      opacity: 1;
+   
+    }
+  }
+  
+  @keyframes buttonTransition {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+   
+    }
+  }
+  
+  

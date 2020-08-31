@@ -1,0 +1,65 @@
+@import "header&footer";
+@import "responsiveHeader&Footer";
+@import "dropdown";
+
+main {
+    position: relative;
+}
+main::after {
+    /* background-image: url(./images/background.jpg); */
+    background-color: lightgray;
+    background-size: cover;
+    content: "";
+    opacity: 0.5;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.product-list {
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    grid-template-rows: 30% 30% 30%;
+    grid-gap: 3%;
+    width: 80%;
+    margin: 0 auto;
+    font-size: 24px;
+}
+.product-item {
+    border: 5px groove lightgray;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+    
+.product-item img{
+    width: 90%;
+    height: 70%;
+    align-self: center;
+ }
+
+ @media only screen and (max-width: 700px) {
+     .product-list {
+        display: flex;
+        flex-direction: column;
+    }
+    .product-item {
+        margin-bottom: 1%;
+    }
+ 
+ }
+
+
+
+ main h1 {
+    margin: 3% 3% 5% 15%;
+}
+main h3{
+    margin: 3% 3% 1% 15%;
+}

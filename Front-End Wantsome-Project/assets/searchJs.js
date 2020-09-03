@@ -1,6 +1,5 @@
-
+//Search Bar
 var main = document.querySelector("main");
-
 var searchBtn = document.querySelector("#searchBtn");
 
 function renderSearch(products){
@@ -11,14 +10,15 @@ function renderSearch(products){
         var searchInput = document.querySelector("#searchBar");
         var searchBar = searchInput.value.toUpperCase();
         const heading = document.createElement("h3");
-        heading.innerText = "Rezultatele cautarii:"
+        heading.innerText = "Rezultatele cautarii:";
+        heading.style.marginLeft = "20%";
         main.appendChild(heading);
         products.forEach(element =>{
            
             if(element.title.toUpperCase().includes(searchBar)) { 
             // window.location.replace("products.html?q=" + searchBar);
             var searchResultBox = document.createElement("div");
-            searchResultBox.setAttribute("style", "width: 70%; padding: 1%; display:flex; justify-content: space-between; align-items: center; margin: 3% auto; border: 1px solid grey; background-color: white; color: black")
+            searchResultBox.setAttribute("style", "width: 70%; padding: 1%; display:flex; justify-content: space-between; align-items: center; margin: 3% auto; border: 1px solid grey; background-color: white; color: black;")
             
             var searchResultImage = document.createElement("img");
             searchResultImage.src = element.src;
@@ -48,7 +48,7 @@ function renderSearch(products){
             console.log('No results found for: ' + searchInput.value);
             var searchResultError = document.createElement("p");
              searchResultError.innerText = `Nu s-a gasit produsul cautat: ${searchInput.value}`;
-             searchResultError.setAttribute("style", "margin:5% 15% 5% 15%; border: 1px solid grey; background-color: white; color: black;");
+             searchResultError.setAttribute("style", "margin:5% 15% 5% 15%; border: 1px solid grey; background-color: white; color: black");
              main.appendChild(searchResultError);
         }
         searchInput.value = "";
@@ -79,6 +79,6 @@ function goToDetails(component) {
         // window.location.assign(`./detailedProduct.html?${component.id}`),
     })
         .then(r => {
-            window.location.assign(`./Categories/detailedProduct.html?q=${component.id}`);
+            window.location.assign(`../../Categories/detailedProduct.html?q=${component.id}`);
         })
 }

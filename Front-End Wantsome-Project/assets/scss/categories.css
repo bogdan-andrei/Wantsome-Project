@@ -284,24 +284,21 @@ header {
           flex-direction: column;
 }
 
-.container {
-  width: 75%;
-  margin: 0 20%;
-}
-
-#form {
-  width: 60%;
+.productList {
+  width: 80%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 0 auto;
+  color: black;
 }
 
-#map {
-  height: 300px;
-  width: 70%;
+main h2 {
+  margin-left: 10%;
 }
-/*# sourceMappingURL=contact.css.map */
+/*# sourceMappingURL=categories.css.map */

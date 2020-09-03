@@ -12,14 +12,17 @@
         -ms-flex-align: center;
             align-items: center;
   }
+  #logoAnchor {
+    width: 40%;
+  }
   #logoImg {
-    width: 80%;
+    width: 100%;
   }
   .searchBox {
     width: 90%;
   }
   .icons {
-    width: 90%;
+    width: 50%;
     margin: 5% 0;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
@@ -36,6 +39,9 @@
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
   }
+  nav .navItem {
+    width: 40%;
+  }
   footer {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -48,6 +54,9 @@
         -ms-flex-pack: justify;
             justify-content: space-between;
     text-align: center;
+  }
+  main {
+    margin: 80% auto;
   }
 }
 /*# sourceMappingURL=responsiveHeader&Footer.css.map */

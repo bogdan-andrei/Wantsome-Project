@@ -4,35 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accessories</title>
-    <link rel="stylesheet" href="../assets/scss/header&footer.css">
-    <link rel="stylesheet" href="../assets/scss/responsiveHeader&Footer.css">
+    <link rel="stylesheet" href="../assets/scss/categories.css">
 
 </head>
 <body>
+    
     <header>
         <div class="header">
-            <img src="https://i.pinimg.com/originals/a5/78/e3/a578e30a8c3ec274d8f88f3fcca81e52.png" alt="Site logo" id="logoImg">
-             <div class= "searchBox"> 
-                 <input id="searchBar" type="text" placeholder= "Cauta produs...">
-                 <button id="searchBtn">Cauta</button>
-             </div> 
-             <div class="icons">
-                <div class= "myAccount">
-                     <img id="myAccLogo" src="../assets/images/accounticon.png" alt="Account Icon">
+            <a href="../products.html" id="logoAnchor">
+                <img src="https://i.pinimg.com/originals/a5/78/e3/a578e30a8c3ec274d8f88f3fcca81e52.png" alt="Site logo"
+                id="logoImg"   >
+            </a>
+            <div class="searchBox">
+                <input id="searchBar" type="text" placeholder="    Cauta produs...">
+                <button id="searchBtn">Cauta</button>
+            </div>
+            <div class="icons">
+                <div class="myAccount">
+
+                    <a href="../login.html"> <img id="myAccLogo" src="../assets/images/accounticon.png" alt="Account Icon"></a>
                     <a href="../login.html">Contul Meu</a>
-                 </div>
-                 <div class= "myCart">
-                     <img id="myCartLogo" src="../assets/images/carticon.png" alt="Cart Icon">
-                     <a href="../cart.html">Cosul meu</a>
-               
+                </div>
+                <div class="myCart">
+                    <a href="../cart.html"><img id="myCartLogo" src="../assets/images/carticon.png" alt="Cart Icon"></a>
+                    <a href="../cart.html">Cosul meu</a>
                 </div>
             </div>
         </div>
         <nav>
-                <li><a href="../products.html">Pagina principala</a></li>
-                <li>TBD</li>
-                <li>TBD</li>
-                <li><a href="../contact.html">Contact</a></li>
+            <div class="navItem dropdown"> <a href=""> Categorii produse </a>
+                    <div class="dropdown-content">
+                        <a href="./cpuProducts.html">Procesoare</a>
+                        <a href="./memoryProducts.html">Memorii</a>
+                        <a href="./ssdProducts.html">Solid-State Drive(SSD)</a>
+                        <a href="./hddProducts.html">Hard disk</a>
+                        <a href="./videoCards.html">Placi video</a>
+                        <a href="./motherboardProducts.html">Placi de baza</a>
+                        <a href="./supplyProducts.html">Surse</a>
+                        <a href="./pcTowerProducts.html">Carcase</a>
+                        <a href="./accessories.html">Cabluri si adaptoare</a>
+                    </div>
+               
+            </div>
+            <div class="navItem"><a href="../products.html">Pagina principala</a></div>
+            <div class="navItem"><a href="../contact.html">Contact</a></div>
         </nav>
 
     </header>
@@ -42,22 +57,31 @@
         </div>
     </main>
     <footer>
-        <div id="info">
-            <h3>Informatii utile</h3>
-            <p><a href="">Termeni si conditii</a></p>
-            <p><a href="">Garantie si retur</a></p>
-            <p><a href="">Cum plasez o comanda?</a></p>
-        </div>
+     
+    
         <div id="contact">
             <h3>Contact</h3>
-            <p>Adresa: <a href="">Str. Vasile Ion </a></p>
-            <p>E-mail: <a href="">balbla@yahoo.com </a></p>
+            <p>Adresa: <a href="">Str. Ion Vasile nr.123</a></p>
+            <p>E-mail: <a href="">mr.robot@hotmail.com </a></p>
             <p>Telefon: <a href="">0721123456 </a></p>
-            <p>Website: <a href="">www.blabla.com</a></p>
-            <p>Facebook <a href="">un icon</a></p>
-            <p>Instagram <a href="">un icon</a></p>
+            <p><a href="">www.mrrobot.com</a></p>
+           </div>
+           <div id="info">
+           <h3>Informatii utile</h3>
+           <p><a href="../assets/footerPages/terms.html">Termeni si conditii</a></p>
+           <p><a href="../assets/footerPages/warranty.html">Garantie si retur</a></p>
+           <p><a href="../assets/footerPages/orderInfo.html">Cum plasez o comanda?</a></p>
         </div>
-        </footer>
+           <div id="socialmedia">
+            <a href="http://facebook.com"><img class="socialIcon" src="https://cdn0.iconfinder.com/data/icons/social-messaging-ui-color-shapes-2-free/128/social-facebook-2019-circle-512.png" alt="facebookIcon" ></a>
+            <a href="http://instagram.com"><img class="socialIcon"  src="https://w7.pngwing.com/pngs/462/874/png-transparent-instagram-logo-icon-instagram-icon-text-logo-sticker.png" alt="instagramIcon" ></a>
+            <a href="http://twitter.com"><img class="socialIcon" src="https://rogueracer.co.uk/wp-content/uploads/2019/06/123-1234348_twittericon-twitter-round-logo-png-transparent-background-png.jpg" alt="twitterIcon" ></a>
+           </div>
+           
+    </footer>
+
     <script src="./accessories.js"></script>
+    <script src="../assets/searchJs.js"></script>
+    
 </body>
 </html>

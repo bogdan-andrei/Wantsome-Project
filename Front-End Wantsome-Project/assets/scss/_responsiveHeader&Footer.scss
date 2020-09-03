@@ -6,14 +6,17 @@
         flex-direction: column;
         align-items: center;
         }
+        #logoAnchor {
+            width:40%;
+        }
      #logoImg{
-        width:80%;
+        width:100%;
         }
     .searchBox {
         width: 90%;
         }
     .icons {
-        width: 90%;
+        width: 50%;
         margin: 5% 0;
         justify-content: space-between;
          }
@@ -25,10 +28,16 @@
         display: flex;
         flex-wrap: wrap;
         }
+        nav .navItem{
+            width: 40%;
+        }
      footer {        
         display: flex;
         flex-direction: column; 
         justify-content: space-between; 
         text-align: center;   
         }
+        main {
+            margin: 80% auto;
+       } 
 }

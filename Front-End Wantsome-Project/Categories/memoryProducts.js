@@ -1,7 +1,7 @@
 
 var main = document.querySelector("main");
 var productList = document.querySelector(".productList")
-var screenWidth =  window.matchMedia("(min-width: 700px)");
+var screenWidth =  window.matchMedia("(max-width: 700px)");
 
 function renderProducts(products) {
     var memory = [];
@@ -12,56 +12,106 @@ function renderProducts(products) {
     }
     console.log(memory);
     memory.forEach(component => {
-        var productBox = document.createElement("div");
-        
-        var productImage = document.createElement("img");
+        const productBox = document.createElement("div");
+        productBox.setAttribute("style", "display:flex; flex-direction:column; justify-content: space-between; align-items: center; text-align: center; border: 1px solid grey; border-radius: 5px;  background-color: white; width: 27%;  margin: 1%; padding: 2%");
+         
+        const detailsBtn = document.createElement("button");
+        detailsBtn.innerText = "Vezi detalii";
+        detailsBtn.setAttribute("style", "visibility: hidden; width: 50%; height:5%; background:transparent; font-size: 16px");
+        detailsBtn.onclick = function () {
+            goToDetails(component);
+        };
+        productBox.onmouseover = function () {
+            detailsBtn.style.visibility = "visible"
+            };
+        productBox.onmouseout = function () {
+            detailsBtn.style.visibility = "hidden"
+        };
+
+        const productImage = document.createElement("img");
         productImage.src = component.src;
         productImage.alt = component.alt;
+        productImage.style.width = "80%";
 
-        var productTitle = document.createElement("h4");
+        const productTitle = document.createElement("h4");
         productTitle.innerText = component.title;
 
-        var productDescription = document.createElement("p");
+        const productDescription = document.createElement("p");
         productDescription.innerText = component.description;
 
-        var productPrice = document.createElement("h4");
+        const productPrice = document.createElement("h4");
         productPrice.innerText = component.price;
 
-        var addToCartButton = document.createElement("button");
-        addToCartButton.innerText = "Adauga in cos"
+        const addToCartButton = document.createElement("button");
+        addToCartButton.innerText = "Adauga in cos";
         addToCartButton.setAttribute("style", "background-color: transparent; width: 50%; height: 40px;")
 
-        if(screenWidth.matches){
-            productList.setAttribute("style", "width: 100%; display:flex; justify-content: space-between; flex-wrap: wrap");
-            productBox.setAttribute("style", "display:flex; flex-direction:column; justify-content: space-between; align-items: center; text-align: center; border: 1px solid black; width: 25%;  margin: 1%; padding: 2%");
-            productImage.style.width = "80%";
-        } else {
-            productList.setAttribute("style", "width: 100%; display:flex; flex-direction: column; justify-content: space-between; ");
-            productBox.setAttribute("style", "display:flex; flex-direction:column; justify-content: space-between; align-items: center; text-align: center; border: 1px solid black; width: 93%;  margin: 1%; padding: 2%");
-            productImage.style.width = "60%";
-        }
+        addToCartButton.onclick = function () {
+            addToCart(component);
+            addedToCart.style.visibility = "visible";
+            setTimeout(function () {
+                addedToCart.style.visibility = "hidden";
+            }, 1500);
+
+        };
+
+        const addedToCart = document.createElement("p");
+        addedToCart.innerText = "Produsul a fost adaugat in cos!";
+        addedToCart.setAttribute("style", "visibility:hidden; margin:1%; font-size: 16px");
 
         productBox.appendChild(productImage);
+        productBox.appendChild(detailsBtn);
         productBox.appendChild(productTitle);
         productBox.appendChild(productDescription);
         productBox.appendChild(productPrice);
         productBox.appendChild(addToCartButton);
-
+        productBox.appendChild(addedToCart);
         productList.appendChild(productBox);
         main.appendChild(productList);
+
+      //Responsiveness
+      if (screenWidth.matches) {
+        productBox.setAttribute("style", "display:flex; flex-direction:column; justify-content: space-between; align-items: center; text-align: center; border: 1px solid grey;  background-color: white; width: 93%;  margin: 1%; padding: 2%");
+       productImage.style.width = "60%";
+   }
     });
 }
 
+//Load products on page
 function fetchProducts() {
     return fetch("http://localhost:3000/api/products", {
         method: "GET",
         headers: {
-            Authorization: `Bearer ${sessionStorage.getItem["token"]}`
+            Authorization: `Bearer ${sessionStorage.getItem("token")}`
         },
     }).then((r) => r.json());
 }
 
 fetchProducts().then(renderProducts)
 
+//Post to cart
+function addToCart(component) {
+    return fetch(`http://localhost:3000/api/cart`, {
+        method: "POST",
+        headers: {
+            Authorization: `Bearer ${sessionStorage.getItem("token")}`,
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(component)
+    })
+}
 
-
+//Post to details page
+function goToDetails(component) {
+    return fetch(`http://localhost:3000/api/details`, {
+        method: "POST",
+        headers: {
+            Authorization: `Bearer ${sessionStorage.getItem("token")}`,
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(component),
+    })
+        .then(r => {
+            window.location.assign(`./detailedProduct.html?q=${component.id}`);
+        })
+}

@@ -20,7 +20,7 @@
   h1,h3 {
     animation-name: headingTransition;
     animation-duration: 2s;
-    animation-delay: 2s;
+    animation-delay: 1s;
     animation-timing-function: ease-in;
     animation-fill-mode: both;
   }
@@ -35,11 +35,32 @@
     margin-left: 5%;
     animation-name: buttonTransition;
     animation-duration: 2s;
-    animation-delay: 4s;
+    animation-delay: 2.5s;
     animation-timing-function: ease-in;
     animation-fill-mode: both;
     margin-top: 4%;
   }
+  #mainBtn:hover, #loginBtn:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    background-color: crimson;
+    box-shadow: inset 0 0 14px black;
+    color: black;
+    transform-origin: 50% 50% 0px;
+    font-size: 28px;
+    font-weight: bold;
+    transition: all 1000ms ease 0.1s;
+  
+    
+    
+  }
+ #mainBtn:hover {
+  transform: matrix3d(0.925926, 0.01, -0.2588119, 0.000431365, 0, 1, 0, 0, 0, 0.258819, 0, 0.965926, -0.00160988, 0, 0, 1);
+  
+ }
+ #loginBtn:hover {
+  transform: matrix3d(0.925926, -0.01 , -0.2588119, -0.000431365, 0, 1, 0, 0, 0, 1.258819, 0, 0.965926, -0.00160988, 0, 0, 1);
+ }
   @keyframes headingTransition {
     from {
       opacity: 0;
@@ -56,9 +77,8 @@
       opacity: 0;
     }
     to {
-      opacity: 1;
+      opacity: 0.76;
    
     }
   }
-  
   

@@ -12,7 +12,7 @@ var product = urlParams.get('q');
 products.forEach(element => {
     container.innerHTML = '';
        
-        if(element.id === product){
+        if(element.id === product){5
 
             const productBox = document.createElement("div");
             // productBox.style.width = "90%";
@@ -20,7 +20,7 @@ products.forEach(element => {
            
             const productTitle = document.createElement("h4");
             productTitle.innerText = element.title;
-            productTitle.setAttribute("style", "font-size: 30px; padding-left: 10%;");
+            productTitle.setAttribute("style", "font-size: 28px; padding-left: 10%;");
 
             const productImg = document.createElement("img");
             productImg.src = element.src;
@@ -38,13 +38,15 @@ products.forEach(element => {
             
             const addToCartButton = document.createElement("button");
             addToCartButton.innerText = "Adauga in cos";
-            addToCartButton.setAttribute("style", "background-color: transparent; width: 50%; height: 40px;")
+            addToCartButton.setAttribute("style","background-color: rgba(0,0,0,0.7);color: white;width: 50%; height: 40px;")
           
             addToCartButton.onclick = function () {
                 addToCart(element);
                 addedToCart.style.visibility = "visible";
+                addToCartButton.style.backgroundColor = "rgba(214, 49, 49, 0.918)";
                 setTimeout(function () {
                     addedToCart.style.visibility = "hidden";
+                    addToCartButton.style.backgroundColor = "rgba(0,0,0,0.7)"
                 }, 1500);
     
             };

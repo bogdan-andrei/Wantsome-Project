@@ -2,6 +2,7 @@ body {
   margin: 0;
   color: white;
   background-image: url(/assets/images/13340.jpg);
+  background-attachment: fixed;
 }
 
 body header {
@@ -303,5 +304,14 @@ header {
 #map {
   height: 300px;
   width: 70%;
+}
+
+#submitBtn {
+  margin-top: 3%;
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  padding: 1%;
+  width: 30%;
 }
 /*# sourceMappingURL=contact.css.map */

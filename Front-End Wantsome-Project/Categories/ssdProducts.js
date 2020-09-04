@@ -14,18 +14,22 @@ function renderProducts(products) {
     ssd.forEach(component => {
         const productBox = document.createElement("div");
         productBox.setAttribute("style", "display:flex; flex-direction:column; justify-content: space-between; align-items: center; text-align: center; border: 1px solid grey; border-radius: 5px;  background-color: white; width: 27%;  margin: 1%; padding: 2%");
-           
         const detailsBtn = document.createElement("button");
         detailsBtn.innerText = "Vezi detalii";
-        detailsBtn.setAttribute("style", "visibility: hidden; width: 50%; height:5%; background:transparent; font-size: 16px");
+        detailsBtn.setAttribute("style", "visibility: hidden; width: 50%; height:5%; color: white; background:rgba(0,0,0,0.7); font-size: 16px");
         detailsBtn.onclick = function () {
             goToDetails(component);
         };
         productBox.onmouseover = function () {
-            detailsBtn.style.visibility = "visible"
-            };
+            detailsBtn.style.visibility = "visible";
+            productBox.style.boxShadow = "inset 0 0 40px black";
+        };
         productBox.onmouseout = function () {
             detailsBtn.style.visibility = "hidden"
+            // productBox.style.borderColor = "grey";
+            // productBox.style.borderWidth = "1px";
+            productBox.style.boxShadow = "inset 0 0 0px black";
+            
         };
 
         const productImage = document.createElement("img");
@@ -44,13 +48,15 @@ function renderProducts(products) {
 
         const addToCartButton = document.createElement("button");
         addToCartButton.innerText = "Adauga in cos";
-        addToCartButton.setAttribute("style", "background-color: transparent; width: 50%; height: 40px;")
+        addToCartButton.setAttribute("style", "color: white; background:rgba(0,0,0,0.7); width: 50%; height: 40px;")
 
         addToCartButton.onclick = function () {
             addToCart(component);
             addedToCart.style.visibility = "visible";
+            addToCartButton.style.backgroundColor = "rgba(214, 49, 49, 0.918)"
             setTimeout(function () {
-                addedToCart.style.visibility = "hidden";
+                addedToCart.style.visibility = "hidden"; 
+                addToCartButton.style.backgroundColor = "rgba(0,0,0,0.7)"
             }, 1500);
 
         };
@@ -69,11 +75,11 @@ function renderProducts(products) {
         productList.appendChild(productBox);
         main.appendChild(productList);
 
-      //Responsiveness
-      if (screenWidth.matches) {
-        productBox.setAttribute("style", "display:flex; flex-direction:column; justify-content: space-between; align-items: center; text-align: center; border: 1px solid grey;  background-color: white; width: 93%;  margin: 1%; padding: 2%");
-       productImage.style.width = "60%";
-   }
+        //Responsiveness
+        if (screenWidth.matches) {
+             productBox.setAttribute("style", "display:flex; flex-direction:column; justify-content: space-between; align-items: center; text-align: center; border: 1px solid grey;  background-color: white; width: 93%;  margin: 1%; padding: 2%");
+            productImage.style.width = "60%";
+        }
     });
 }
 

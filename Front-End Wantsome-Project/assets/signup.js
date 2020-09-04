@@ -8,14 +8,6 @@ var passLabel = document.getElementsByTagName("label")[2];
 var confirmLabel = document.getElementsByTagName("label")[3];
 var signUpBtn = document.getElementsByTagName("button")[0];
 
-//all inputs mandatory
-
-// username.required = true;
-// emailLabel.required = true;
-// password.required = true;
-// confirmPassword.required = true;
-
-//validate username
 var warning = document.createElement("p");
 function validateUsername(event) {
   if (username.value.length < 4) {

@@ -104,9 +104,6 @@ body {
     display: flex;
     justify-content: space-around;
   }
-  .link:hover {
-    /* color: rgba(0, 128, 0, 0.692); */
-  }
   .link {
     text-decoration: none;
     font-size: 15px;

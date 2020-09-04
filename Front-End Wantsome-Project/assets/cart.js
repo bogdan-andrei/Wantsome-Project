@@ -231,7 +231,6 @@ function goToDetails(component) {
             "Content-Type": "application/json",
         },
         body: JSON.stringify(component),
-        // window.location.assign(`./detailedProduct.html?${component.id}`),
     })
         .then(r => {
             window.location.assign(`./Categories/detailedProduct.html?q=${component.id}`);

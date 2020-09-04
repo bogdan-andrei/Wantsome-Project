@@ -5,20 +5,6 @@
 main {
     position: relative;
 }
-// main::after {
-//     /* background-image: url(./images/background.jpg); */
-//     background-color: lightgray;
-//     background-size: cover;
-//     content: "";
-//     opacity: 0.5;
-//     z-index: -1;
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     bottom: 0;
-//     right: 0;
-// }
-
 .product-list {
     display: grid;
     grid-template-columns: 30% 30% 30%;

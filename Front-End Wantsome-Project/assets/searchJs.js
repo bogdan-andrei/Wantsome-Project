@@ -16,7 +16,6 @@ function renderSearch(products){
         products.forEach(element =>{
            
             if(element.title.toUpperCase().includes(searchBar)) { 
-            // window.location.replace("products.html?q=" + searchBar);
             var searchResultBox = document.createElement("div");
             searchResultBox.setAttribute("style", "width: 70%; padding: 1%; display:flex; justify-content: space-between; align-items: center; margin: 3% auto; border: 1px solid grey; background-color: white; color: black;")
             
